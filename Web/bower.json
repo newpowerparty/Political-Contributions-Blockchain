@@ -1,0 +1,21 @@
+{
+  "name": "Political Contributions Blockchain",
+  "main": "index.js",
+  "homepage": "https://github.com/domen111/Political-Contributions-Blockchain",
+  "authors": [
+    "domen111 <domen111@gmail.com>"
+  ],
+  "description": "Use Ethereum blockchain to recode political contributions.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "web3": "^0.19.0"
+  }
+}
