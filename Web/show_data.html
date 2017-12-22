@@ -1,233 +1,135 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Get Gata Page</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<style>
-			td{
-				height: 30px;
-			}
-		</style>
-	</head>
-	
-	<body>
-		<table width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
-			<tr>
-				<th>交易日期</th>
-				<th>收支科目</th>
-				<th>金錢否</th>
-				<th>收入金額</th>
-				<th>收支對象</th>
-				<th>統一編號</th>
-				<th>收據號碼</th>
-				<th>異常註記</th>
-			</tr>
-			<tr>
-				<td id="t11" align="center"></td>
-				<td id="t12" align="center"></td>
-				<td id="t13" align="center"></td>
-				<td id="t14" align="center"></td>
-				<td id="t15" align="center"></td>
-				<td id="t16" align="center"></td>
-				<td id="t17" align="center"></td>
-				<td id="t18" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t21" align="center"></td>
-				<td id="t22" align="center"></td>
-				<td id="t23" align="center"></td>
-				<td id="t24" align="center"></td>
-				<td id="t25" align="center"></td>
-				<td id="t26" align="center"></td>
-				<td id="t27" align="center"></td>
-				<td id="t28" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t31" align="center"></td>
-				<td id="t32" align="center"></td>
-				<td id="t33" align="center"></td>
-				<td id="t34" align="center"></td>
-				<td id="t35" align="center"></td>
-				<td id="t36" align="center"></td>
-				<td id="t37" align="center"></td>
-				<td id="t38" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t41" align="center"></td>
-				<td id="t42" align="center"></td>
-				<td id="t43" align="center"></td>
-				<td id="t44" align="center"></td>
-				<td id="t45" align="center"></td>
-				<td id="t46" align="center"></td>
-				<td id="t47" align="center"></td>
-				<td id="t48" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t51" align="center"></td>
-				<td id="t52" align="center"></td>
-				<td id="t53" align="center"></td>
-				<td id="t54" align="center"></td>
-				<td id="t55" align="center"></td>
-				<td id="t56" align="center"></td>
-				<td id="t57" align="center"></td>
-				<td id="t58" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t61" align="center"></td>
-				<td id="t62" align="center"></td>
-				<td id="t63" align="center"></td>
-				<td id="t64" align="center"></td>
-				<td id="t65" align="center"></td>
-				<td id="t66" align="center"></td>
-				<td id="t67" align="center"></td>
-				<td id="t68" align="center"></td>
-			</tr>
-				<tr>
-				<td id="t71" align="center"></td>
-				<td id="t72" align="center"></td>
-				<td id="t73" align="center"></td>
-				<td id="t74" align="center"></td>
-				<td id="t75" align="center"></td>
-				<td id="t76" align="center"></td>
-				<td id="t77" align="center"></td>
-				<td id="t78" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t81" align="center"></td>
-				<td id="t82" align="center"></td>
-				<td id="t83" align="center"></td>
-				<td id="t84" align="center"></td>
-				<td id="t85" align="center"></td>
-				<td id="t86" align="center"></td>
-				<td id="t87" align="center"></td>
-				<td id="t88" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t91" align="center"></td>
-				<td id="t92" align="center"></td>
-				<td id="t93" align="center"></td>
-				<td id="t94" align="center"></td>
-				<td id="t95" align="center"></td>
-				<td id="t96" align="center"></td>
-				<td id="t97" align="center"></td>
-				<td id="t98" align="center"></td>
-			</tr>
-			<tr>
-				<td id="t101" align="center"></td>
-				<td id="t102" align="center"></td>
-				<td id="t103" align="center"></td>
-				<td id="t104" align="center"></td>
-				<td id="t105" align="center"></td>
-				<td id="t106" align="center"></td>
-				<td id="t107" align="center"></td>
-				<td id="t108" align="center"></td>
-			</tr>
-			<tr>
-				<td align="center"><a href="javascript: prev();" id="prev">上10筆</a></td>
-				<td colspan="6" id="mid"></td>
-				<td align="center"><a href="javascript: next();" id="next">下10筆</a></td>
-			</tr>
-		</table>
-		
-		<script>
-			/*var Data = function(date , type , isMoney , amount , contributor , id , list_id , error)
-			{
-				this.date = date;
-				this.type = type;
-				this.isMoney = isMoney;
-				this.amount = amount;
-				this.contributor = contributor;
-				this.id = id;
-				this.list_id = list_id;
-				this.error = error;
-			};*/
-			
-			var all_data = [[ "1051230" , "營利事業捐贈收入" , "金錢" , "6000" , "優泊股份有限公司" , "42781323" , "10510176500057200000" , "" ]];
-			var now_p = 0;
-			
-			var parameters = location.search.substring(1).split("&");
-			var t = [];
-			var temp = parameters[0].split("=");
-			t[0] = unescape(temp[1]);
-			temp = parameters[1].split("=");
-			t[1] = unescape(temp[1]);
-			temp = parameters[2].split("=");
-			t[2] = unescape(temp[1]);
-			temp = parameters[3].split("=");
-			t[3] = unescape(temp[1]);
-			temp = parameters[4].split("=");
-			t[4] = unescape(temp[1]);
-			temp = parameters[5].split("=");
-			t[5] = unescape(temp[1]);
-			temp = parameters[6].split("=");
-			t[6] = unescape(temp[1]);
-			temp = parameters[7].split("=");
-			t[7] = unescape(temp[1]);
-			
-			filt( t , all_data );
-			
-			function filt( t ) {
-				var fdate = t[0];
-				var ftype = t[1];
-				var fisMoney = t[2];
-				var famount = t[3];
-				var fcontributor = t[4];
-				var fid = t[5];
-				var flist_id = t[6];
-				var ferror = t[7];
-				//f-xx = filters : "*" or "" means get all
-				
-				//get data from blockchain and initial all_data and length( length of all_data )
-				
-				update();
-				document.getElementById("prev").style.display = "none";
-				if( !( all_data.length > (now_p + 1) * 10 ) ) document.getElementById("next").style.display = "none";
-			}
-			
-			function update()
-			{
-				for(var i = 1; i <= Math.min(10 , all_data.length - now_p * 10); i++)
-				{
-					for(var j = 1; j <= 8; j++)
-					{
-						document.getElementById("t"+i+j).innerHTML = all_data[now_p*10+i-1][j-1];
-					}
-				}
-				
-				for(var i = Math.min(10 , all_data.length - now_p * 10) + 1; i <= 10; i++)
-				{
-					for(var j = 1; j <= 8; j++)
-					{
-						document.getElementById("t"+i+j).style.display = 'none';
-					}
-				}
-			}
-			
-			function prev()
-			{
-				now_p--;
-				
-				if( now_p == 0 ) document.getElementById("prev").style.display = "none";
-				else document.getElementById("prev").style.display = "initial";
-				
-				if( !( all_data.length > (now_p + 1) * 10 ) ) document.getElementById("next").style.display = "none";
-				else document.getElementById("next").style.display = "initial";
-				
-				update();
-			}
-			
-			function next()
-			{
-				now_p++;
-				
-				if( now_p == 0 ) document.getElementById("prev").style.display = "none";
-				else document.getElementById("prev").style.display = "initial";
-				
-				if( !( all_data.length > (now_p + 1) * 10 ) ) document.getElementById("next").style.display = "none";
-				else document.getElementById("next").style.display = "initial";
-				
-				update();
-			}
-		</script>
-	</body>
+  <head>
+    <title>Get Gata Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      td{
+        height: 30px;
+      }
+    </style>
+    <script src="bower_components/web3/dist/web3.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="show_data.js"></script>
+  </head>
+  
+  <body>
+    <table width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <th>交易日期</th>
+        <th>收支科目</th>
+        <th>金錢否</th>
+        <th>收入金額</th>
+        <th>收支對象</th>
+        <th>統一編號</th>
+        <th>收據號碼</th>
+        <th>異常註記</th>
+      </tr>
+      <tr>
+        <td id="t11" align="center"></td>
+        <td id="t12" align="center"></td>
+        <td id="t13" align="center"></td>
+        <td id="t14" align="center"></td>
+        <td id="t15" align="center"></td>
+        <td id="t16" align="center"></td>
+        <td id="t17" align="center"></td>
+        <td id="t18" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t21" align="center"></td>
+        <td id="t22" align="center"></td>
+        <td id="t23" align="center"></td>
+        <td id="t24" align="center"></td>
+        <td id="t25" align="center"></td>
+        <td id="t26" align="center"></td>
+        <td id="t27" align="center"></td>
+        <td id="t28" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t31" align="center"></td>
+        <td id="t32" align="center"></td>
+        <td id="t33" align="center"></td>
+        <td id="t34" align="center"></td>
+        <td id="t35" align="center"></td>
+        <td id="t36" align="center"></td>
+        <td id="t37" align="center"></td>
+        <td id="t38" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t41" align="center"></td>
+        <td id="t42" align="center"></td>
+        <td id="t43" align="center"></td>
+        <td id="t44" align="center"></td>
+        <td id="t45" align="center"></td>
+        <td id="t46" align="center"></td>
+        <td id="t47" align="center"></td>
+        <td id="t48" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t51" align="center"></td>
+        <td id="t52" align="center"></td>
+        <td id="t53" align="center"></td>
+        <td id="t54" align="center"></td>
+        <td id="t55" align="center"></td>
+        <td id="t56" align="center"></td>
+        <td id="t57" align="center"></td>
+        <td id="t58" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t61" align="center"></td>
+        <td id="t62" align="center"></td>
+        <td id="t63" align="center"></td>
+        <td id="t64" align="center"></td>
+        <td id="t65" align="center"></td>
+        <td id="t66" align="center"></td>
+        <td id="t67" align="center"></td>
+        <td id="t68" align="center"></td>
+      </tr>
+        <tr>
+        <td id="t71" align="center"></td>
+        <td id="t72" align="center"></td>
+        <td id="t73" align="center"></td>
+        <td id="t74" align="center"></td>
+        <td id="t75" align="center"></td>
+        <td id="t76" align="center"></td>
+        <td id="t77" align="center"></td>
+        <td id="t78" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t81" align="center"></td>
+        <td id="t82" align="center"></td>
+        <td id="t83" align="center"></td>
+        <td id="t84" align="center"></td>
+        <td id="t85" align="center"></td>
+        <td id="t86" align="center"></td>
+        <td id="t87" align="center"></td>
+        <td id="t88" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t91" align="center"></td>
+        <td id="t92" align="center"></td>
+        <td id="t93" align="center"></td>
+        <td id="t94" align="center"></td>
+        <td id="t95" align="center"></td>
+        <td id="t96" align="center"></td>
+        <td id="t97" align="center"></td>
+        <td id="t98" align="center"></td>
+      </tr>
+      <tr>
+        <td id="t101" align="center"></td>
+        <td id="t102" align="center"></td>
+        <td id="t103" align="center"></td>
+        <td id="t104" align="center"></td>
+        <td id="t105" align="center"></td>
+        <td id="t106" align="center"></td>
+        <td id="t107" align="center"></td>
+        <td id="t108" align="center"></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="javascript: prev();" id="prev">上10筆</a></td>
+        <td colspan="6" id="mid"></td>
+        <td align="center"><a href="javascript: next();" id="next">下10筆</a></td>
+      </tr>
+    </table>
+  </body>
 </html>
