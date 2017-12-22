@@ -3,5 +3,6 @@
 2. We suggest to use Ropsten Test (you can choose it in Metamask).
 3. To deploy the smart contract, you can use [Remix Browser Solidity IDE](https://remix.ethereum.org/).
 4. Then modify `contractAddress` variable in `Web/index.js`.
-5. To add record, use `update.html`.
-6. To view data, use `start.html`. (Currently we need Metamask to view it.)
+5. In `/Web`, use `bower install` to install `web3.js` library.
+6. To add record, use `update.html`.
+7. To view data, use `start.html`. (Currently we need Metamask to view it.)
